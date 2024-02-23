@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roleta de Prêmios Estática com Ponteiro Giratório</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background-image: url('PlayPixFundo.png') ;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+</head>
+<body>
+    
+
+<div class="roleta-container">
+  <!-- A roleta é estática -->
+  <img id="roleta" class="roleta" src="Roleta_Igaming_Playpix (1).png" alt="Roleta">
+  <div id="ponteiro" class="ponteiro"></div>
+</div>
+
+<button id="girar">Gire a Roleta de Premios Aqui</button>
+
+<div id="resultado"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<!-- Modal -->
+<div id="modalPremiado" class="modal">
+    <div class="modal-content">
+
+      <span class="close-button">×</span>
+      <h2>Parabéns!</h2>
+      <p>Você foi premiado pela Playpix! e ainda garantiu um bonus de 100% no seu primeiro deposito</p>
+      <p> Mas ATENÇÃO para resgatar o premio + bonus basta fazer seu cadastro na plataforma e depositar qualquer valor, Só assim seu premio ficara disponivel</p>
+      <button id="receiveBonusBtn">Sim, quero receber o bônus + prêmio</button>
+
+    </div>
+  </div>
+  

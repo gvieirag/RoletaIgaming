@@ -1,0 +1,160 @@
+.roleta-container {
+    position: relative;
+    width: 650px; /* Ajuste conforme o tamanho da sua imagem da roleta */
+    height: 650px; /* Ajuste conforme o tamanho da sua imagem da roleta */
+    margin: auto;
+  }
+   
+  .ponteiro {
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    width: 10px; /* Largura do ponteiro */
+    height: 40px; /* Comprimento do ponteiro */
+    background-color: #daa520; /* Cor dourada do ponteiro */
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: 50% 100%;
+    transition: transform 4s ease-out;
+    /* Adiciona uma borda para um look mais refinado */
+    border: 2px solid #B8860B;
+    /* Arredonda as bordas inferiores do ponteiro */
+    border-radius: 4px 4px 0 0;
+    /* Adiciona sombra para um efeito 3D */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /* Adiciona um pseudo-elemento para criar o efeito de uma base para o ponteiro */
+  }
+  
+  .ponteiro::after {
+    content: "";
+    position: absolute;
+    bottom: -9px; /* Ajusta a posição para ficar logo abaixo do ponteiro */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; /* Largura da base */
+    height: 26px; /* Altura da base */
+    background-color: #8b451344; /* Cor da base */
+    border: 2px solid #23d8504d; /* Bordas da base */
+    border-radius: 50%; /* Torna a base circular */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Sombra para a base */
+  }
+  
+  .roleta {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'SpaceGrotesk' , sans-serif;
+    background-color: #0a6cec;
+    animation: pulse 2s reverse;
+    color: rgb(255, 255, 255);
+
+  }
+  
+  #resultado {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  /* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .roleta-container {
+      width: 100vw; /* Ajusta a largura da roleta para 90% da largura da tela */
+      height: 100vw; /* Ajusta a altura para manter a proporção */
+    }
+  
+    .ponteiro {
+      height: 50px; /* Reduz o tamanho do ponteiro para dispositivos menores */
+      width: 7px; /* Torna o ponteiro mais fino */
+    }
+  
+    .ponteiro::after {
+      width: 10px; /* Reduz o tamanho da base do ponteiro */
+      height: 10px;
+    }
+  
+    button {
+      padding: 10px 16px;
+      font-size: 16px; /* Ajusta o tamanho do texto para dispositivos menores */
+    }
+  
+    #resultado {
+      font-size: 22px; /* Torna o texto um pouco menor para economizar espaço */
+    }
+  }
+
+/* Estilo do Modal */
+.modal {
+  display: none; /* Fica oculto até ser ativado */
+  position: fixed; /* Fica por cima da página */
+  z-index: 1; /* Sobreposto a outros conteúdos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 150%; /* Altura total */
+  overflow: auto; /* Habilita a rolagem se necessário */
+  background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 50% auto; /* 15% do topo e centralizado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Largura do conteúdo do modal */
+  font-family: 'Space+Grotesk', sans-serif
+}
+  
+
+.close-button {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#receiveBonusBtn {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Texto branco */
+    padding: 14px 20px; /* Padding para tamanho */
+    margin: 10px 0; /* Alguma margem acima e abaixo */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+    width: 100%; /* Ocupar a largura total do conteúdo do modal */
+  }
+  
+  #receiveBonusBtn:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+  }
+  
